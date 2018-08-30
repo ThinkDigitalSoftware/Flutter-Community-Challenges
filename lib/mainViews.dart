@@ -17,14 +17,19 @@ class _MainViewsState extends State<MainViews> {
   // List of bottom navigation bar items
   List<BottomNavigationBarItem> _bottomNavigationBarItems = [
     BottomNavigationBarItem(
-        icon: Icon(GroovinMaterialIcons.code_tags),
-        title: Text("Current"),
+        icon: Icon(GroovinMaterialIcons.information_outline),
+        title: Text("About"),
         backgroundColor: Colors.indigo
     ),
     BottomNavigationBarItem(
-      icon: Icon(GroovinMaterialIcons.arrow_left_bold_circle_outline),
-      title: Text("Previous"),
+      icon: Icon(GroovinMaterialIcons.crown),
+      title: Text("Hall of Fame"),
       backgroundColor: Colors.indigo
+    ),
+    BottomNavigationBarItem(
+        icon: Icon(GroovinMaterialIcons.code_tags),
+        title: Text("Current"),
+        backgroundColor: Colors.indigo
     ),
     BottomNavigationBarItem(
       icon: Icon(GroovinMaterialIcons.calendar_text),
@@ -36,11 +41,6 @@ class _MainViewsState extends State<MainViews> {
       title: Text("Suggestions"),
       backgroundColor: Colors.indigo
     ),
-    BottomNavigationBarItem(
-        icon: Icon(GroovinMaterialIcons.information_outline),
-        title: Text("About"),
-        backgroundColor: Colors.indigo
-    ),
   ];
 
   PageController _pageController;
@@ -51,7 +51,7 @@ class _MainViewsState extends State<MainViews> {
         duration: const Duration(milliseconds: 300), curve: Curves.ease);
   }
 
-  int _page = 0; // Track which page is in view
+  int _page = 2; // Track which page is in view
 
   // handles when the page changes
   void _onPageChanged(int page) {
@@ -76,6 +76,8 @@ class _MainViewsState extends State<MainViews> {
   Widget build(BuildContext context) {
     // List of FloatingActionButtons to show only on 'Suggestions' page
     List<Widget> _fabs = [
+      Container(),
+      Container(),
       FloatingActionButton.extended(
         onPressed: () {
           // User can submit their entry to the challenge
@@ -84,7 +86,6 @@ class _MainViewsState extends State<MainViews> {
         label: Text("Submit Entry"),
       ),
       Container(),
-      Container(),
       FloatingActionButton.extended(
         onPressed: () {
 
@@ -92,7 +93,6 @@ class _MainViewsState extends State<MainViews> {
         icon: Icon(Icons.add),
         label: Text("Suggest Challenge"),
       ),
-      Container(),
     ];
 
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
@@ -112,9 +112,9 @@ class _MainViewsState extends State<MainViews> {
         controller: _pageController,
         children: <Widget>[
           // Placeholder widgets:
+          Container(),
+          Container(),
           CurrentChallenge(),
-          Container(),
-          Container(),
           Container(),
           Container(),
         ],
