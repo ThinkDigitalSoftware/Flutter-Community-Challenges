@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.indigo,
       ),
       home: MainViews(title: 'Flutter Community Challenges'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
