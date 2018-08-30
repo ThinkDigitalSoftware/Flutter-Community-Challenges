@@ -13,34 +13,28 @@ class MainViews extends StatefulWidget {
 }
 
 class _MainViewsState extends State<MainViews> {
-
   // List of bottom navigation bar items
   List<BottomNavigationBarItem> _bottomNavigationBarItems = [
     BottomNavigationBarItem(
-        icon: Icon(GroovinMaterialIcons.code_tags),
-        title: Text("Current"),
-        backgroundColor: Colors.indigo
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(GroovinMaterialIcons.arrow_left_bold_circle_outline),
-      title: Text("Previous"),
-      backgroundColor: Colors.indigo
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(GroovinMaterialIcons.calendar_text),
-      title: Text("Upcoming"),
-      backgroundColor: Colors.indigo
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(GroovinMaterialIcons.comment_plus_outline),
-      title: Text("Suggestions"),
-      backgroundColor: Colors.indigo
-    ),
-    BottomNavigationBarItem(
         icon: Icon(GroovinMaterialIcons.information_outline),
         title: Text("About"),
-        backgroundColor: Colors.indigo
-    ),
+        backgroundColor: Colors.indigo),
+    BottomNavigationBarItem(
+        icon: Icon(GroovinMaterialIcons.crown),
+        title: Text("Hall of Fame"),
+        backgroundColor: Colors.indigo),
+    BottomNavigationBarItem(
+        icon: Icon(GroovinMaterialIcons.code_tags),
+        title: Text("Current"),
+        backgroundColor: Colors.indigo),
+    BottomNavigationBarItem(
+        icon: Icon(GroovinMaterialIcons.calendar_text),
+        title: Text("Upcoming"),
+        backgroundColor: Colors.indigo),
+    BottomNavigationBarItem(
+        icon: Icon(GroovinMaterialIcons.comment_plus_outline),
+        title: Text("Suggestions"),
+        backgroundColor: Colors.indigo),
   ];
 
   PageController _pageController;
@@ -51,7 +45,7 @@ class _MainViewsState extends State<MainViews> {
         duration: const Duration(milliseconds: 300), curve: Curves.ease);
   }
 
-  int _page = 0; // Track which page is in view
+  int _page = 2; // Track which page is in view
 
   // handles when the page changes
   void _onPageChanged(int page) {
@@ -63,7 +57,7 @@ class _MainViewsState extends State<MainViews> {
   @override
   void initState() {
     super.initState();
-    _pageController = PageController();
+    _pageController = PageController(initialPage: _page);
   }
 
   @override
@@ -76,6 +70,8 @@ class _MainViewsState extends State<MainViews> {
   Widget build(BuildContext context) {
     // List of FloatingActionButtons to show only on 'Suggestions' page
     List<Widget> _fabs = [
+      Container(),
+      Container(),
       FloatingActionButton.extended(
         onPressed: () {
           // User can submit their entry to the challenge
@@ -84,23 +80,18 @@ class _MainViewsState extends State<MainViews> {
         label: Text("Submit Entry"),
       ),
       Container(),
-      Container(),
       FloatingActionButton.extended(
-        onPressed: () {
-
-        },
+        onPressed: () {},
         icon: Icon(Icons.add),
         label: Text("Suggest Challenge"),
       ),
-      Container(),
     ];
 
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
         statusBarIconBrightness: Brightness.dark,
         statusBarColor: Colors.indigo,
         systemNavigationBarColor: Colors.indigo,
-        systemNavigationBarIconBrightness: Brightness.dark
-    ));
+        systemNavigationBarIconBrightness: Brightness.dark));
 
     return Scaffold(
       appBar: AppBar(
@@ -111,12 +102,27 @@ class _MainViewsState extends State<MainViews> {
         onPageChanged: _onPageChanged,
         controller: _pageController,
         children: <Widget>[
-          // Placeholder widgets:
+          Container(
+            child: Center(
+              child: Icon(GroovinMaterialIcons.information_outline),
+            ),
+          ),
+          Container(
+            child: Center(
+              child: Icon(GroovinMaterialIcons.crown),
+            ),
+          ),
           CurrentChallenge(),
-          Container(),
-          Container(),
-          Container(),
-          Container(),
+          Container(
+            child: Center(
+              child: Icon(GroovinMaterialIcons.calendar_text),
+            ),
+          ),
+          Container(
+            child: Center(
+              child: Icon(GroovinMaterialIcons.comment_plus_outline),
+            ),
+          ),
         ],
       ),
       floatingActionButton: _fabs[_page],
