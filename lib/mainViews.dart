@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:groovin_material_icons/groovin_material_icons.dart';
+import 'package:flutter_community_challenges/current_challenge.dart';
 
 class MainViews extends StatefulWidget {
   MainViews({Key key, this.title}) : super(key: key);
@@ -25,7 +27,7 @@ class _MainViewsState extends State<MainViews> {
       backgroundColor: Colors.indigo
     ),
     BottomNavigationBarItem(
-      icon: Icon(GroovinMaterialIcons.new_box),
+      icon: Icon(GroovinMaterialIcons.calendar_text),
       title: Text("Upcoming"),
       backgroundColor: Colors.indigo
     ),
@@ -74,7 +76,13 @@ class _MainViewsState extends State<MainViews> {
   Widget build(BuildContext context) {
     // List of FloatingActionButtons to show only on 'Suggestions' page
     List<Widget> _fabs = [
-      Container(),
+      FloatingActionButton.extended(
+        onPressed: () {
+          // User can submit their entry to the challenge
+        },
+        icon: Icon(Icons.add),
+        label: Text("Submit Entry"),
+      ),
       Container(),
       Container(),
       FloatingActionButton.extended(
@@ -87,6 +95,13 @@ class _MainViewsState extends State<MainViews> {
       Container(),
     ];
 
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
+        statusBarIconBrightness: Brightness.dark,
+        statusBarColor: Colors.indigo,
+        systemNavigationBarColor: Colors.indigo,
+        systemNavigationBarIconBrightness: Brightness.dark
+    ));
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -97,7 +112,7 @@ class _MainViewsState extends State<MainViews> {
         controller: _pageController,
         children: <Widget>[
           // Placeholder widgets:
-          Container(),
+          CurrentChallenge(),
           Container(),
           Container(),
           Container(),
