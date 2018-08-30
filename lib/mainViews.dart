@@ -13,34 +13,28 @@ class MainViews extends StatefulWidget {
 }
 
 class _MainViewsState extends State<MainViews> {
-
   // List of bottom navigation bar items
   List<BottomNavigationBarItem> _bottomNavigationBarItems = [
     BottomNavigationBarItem(
         icon: Icon(GroovinMaterialIcons.information_outline),
         title: Text("About"),
-        backgroundColor: Colors.indigo
-    ),
+        backgroundColor: Colors.indigo),
     BottomNavigationBarItem(
-      icon: Icon(GroovinMaterialIcons.crown),
-      title: Text("Hall of Fame"),
-      backgroundColor: Colors.indigo
-    ),
+        icon: Icon(GroovinMaterialIcons.crown),
+        title: Text("Hall of Fame"),
+        backgroundColor: Colors.indigo),
     BottomNavigationBarItem(
         icon: Icon(GroovinMaterialIcons.code_tags),
         title: Text("Current"),
-        backgroundColor: Colors.indigo
-    ),
+        backgroundColor: Colors.indigo),
     BottomNavigationBarItem(
-      icon: Icon(GroovinMaterialIcons.calendar_text),
-      title: Text("Upcoming"),
-      backgroundColor: Colors.indigo
-    ),
+        icon: Icon(GroovinMaterialIcons.calendar_text),
+        title: Text("Upcoming"),
+        backgroundColor: Colors.indigo),
     BottomNavigationBarItem(
-      icon: Icon(GroovinMaterialIcons.comment_plus_outline),
-      title: Text("Suggestions"),
-      backgroundColor: Colors.indigo
-    ),
+        icon: Icon(GroovinMaterialIcons.comment_plus_outline),
+        title: Text("Suggestions"),
+        backgroundColor: Colors.indigo),
   ];
 
   PageController _pageController;
@@ -87,9 +81,7 @@ class _MainViewsState extends State<MainViews> {
       ),
       Container(),
       FloatingActionButton.extended(
-        onPressed: () {
-
-        },
+        onPressed: () {},
         icon: Icon(Icons.add),
         label: Text("Suggest Challenge"),
       ),
@@ -99,8 +91,7 @@ class _MainViewsState extends State<MainViews> {
         statusBarIconBrightness: Brightness.dark,
         statusBarColor: Colors.indigo,
         systemNavigationBarColor: Colors.indigo,
-        systemNavigationBarIconBrightness: Brightness.dark
-    ));
+        systemNavigationBarIconBrightness: Brightness.dark));
 
     return Scaffold(
       appBar: AppBar(
@@ -112,11 +103,27 @@ class _MainViewsState extends State<MainViews> {
         controller: _pageController,
         children: <Widget>[
           // Placeholder widgets:
-          Container(),
-          Container(),
+          Container(
+            child: Center(
+              child: Icon(GroovinMaterialIcons.information_outline),
+            ),
+          ),
+          Container(
+            child: Center(
+              child: Icon(GroovinMaterialIcons.crown),
+            ),
+          ),
           CurrentChallenge(),
-          Container(),
-          Container(),
+          Container(
+            child: Center(
+              child: Icon(GroovinMaterialIcons.calendar_text),
+            ),
+          ),
+          Container(
+            child: Center(
+              child: Icon(GroovinMaterialIcons.comment_plus_outline),
+            ),
+          ),
         ],
       ),
       floatingActionButton: _fabs[_page],
