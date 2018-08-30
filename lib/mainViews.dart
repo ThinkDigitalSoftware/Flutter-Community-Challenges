@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_community_challenges/about.dart';
+import 'package:flutter_community_challenges/challengeSuggestions.dart';
+import 'package:flutter_community_challenges/hallOfFame.dart';
+import 'package:flutter_community_challenges/upcomingChallenges.dart';
 import 'package:groovin_material_icons/groovin_material_icons.dart';
 import 'package:flutter_community_challenges/current_challenge.dart';
 
@@ -102,27 +106,11 @@ class _MainViewsState extends State<MainViews> {
         onPageChanged: _onPageChanged,
         controller: _pageController,
         children: <Widget>[
-          Container(
-            child: Center(
-              child: Icon(GroovinMaterialIcons.information_outline),
-            ),
-          ),
-          Container(
-            child: Center(
-              child: Icon(GroovinMaterialIcons.crown),
-            ),
-          ),
+          About(),
+          HallOfFame(),
           CurrentChallenge(),
-          Container(
-            child: Center(
-              child: Icon(GroovinMaterialIcons.calendar_text),
-            ),
-          ),
-          Container(
-            child: Center(
-              child: Icon(GroovinMaterialIcons.comment_plus_outline),
-            ),
-          ),
+          UpcomingChallenges(),
+          ChallengeSuggestions(),
         ],
       ),
       floatingActionButton: _fabs[_page],
