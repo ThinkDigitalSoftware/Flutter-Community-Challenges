@@ -102,7 +102,6 @@ class _MainViewsState extends State<MainViews> {
         onPageChanged: _onPageChanged,
         controller: _pageController,
         children: <Widget>[
-          // Placeholder widgets:
           Container(
             child: Center(
               child: Icon(GroovinMaterialIcons.information_outline),
