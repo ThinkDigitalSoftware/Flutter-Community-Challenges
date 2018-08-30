@@ -111,8 +111,8 @@ class _MainViewsState extends State<MainViews> {
         onPageChanged: _onPageChanged,
         controller: _pageController,
         children: <Widget>[
-          // Placeholder widgets:
           CurrentChallenge(),
+          // Placeholder widgets:
           Container(),
           Container(),
           Container(),
