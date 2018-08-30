@@ -6,6 +6,7 @@ import 'package:flutter_community_challenges/hallOfFame.dart';
 import 'package:flutter_community_challenges/upcomingChallenges.dart';
 import 'package:groovin_material_icons/groovin_material_icons.dart';
 import 'package:flutter_community_challenges/current_challenge.dart';
+import 'package:flutter_community_challenges/suggestChallenge.dart';
 
 class MainViews extends StatefulWidget {
   MainViews({Key key, this.title}) : super(key: key);
@@ -78,24 +79,29 @@ class _MainViewsState extends State<MainViews> {
       Container(),
       FloatingActionButton.extended(
         onPressed: () {
-          // User can submit their entry to the challenge
+          Navigator.pushNamed(context, "/SubmitEntryToChallenge");
         },
         icon: Icon(Icons.add),
         label: Text("Submit Entry"),
       ),
       Container(),
       FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, "/SuggestChallenge");
+        },
         icon: Icon(Icons.add),
         label: Text("Suggest Challenge"),
       ),
     ];
 
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle.light.copyWith(
         statusBarIconBrightness: Brightness.dark,
         statusBarColor: Colors.indigo,
         systemNavigationBarColor: Colors.indigo,
-        systemNavigationBarIconBrightness: Brightness.dark));
+        systemNavigationBarIconBrightness: Brightness.dark,
+      )
+    );
 
     return Scaffold(
       appBar: AppBar(
