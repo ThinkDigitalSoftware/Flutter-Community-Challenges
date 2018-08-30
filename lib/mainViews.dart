@@ -30,8 +30,8 @@ class _MainViewsState extends State<MainViews> {
       backgroundColor: Colors.indigo
     ),
     BottomNavigationBarItem(
-      icon: Icon(GroovinMaterialIcons.calendar_question),
-      title: Text("Upcoming"),
+      icon: Icon(GroovinMaterialIcons.comment_plus_outline),
+      title: Text("Suggestions"),
       backgroundColor: Colors.indigo
     ),
   ];
