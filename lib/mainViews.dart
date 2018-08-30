@@ -34,6 +34,11 @@ class _MainViewsState extends State<MainViews> {
       title: Text("Suggestions"),
       backgroundColor: Colors.indigo
     ),
+    BottomNavigationBarItem(
+        icon: Icon(GroovinMaterialIcons.information_outline),
+        title: Text("About"),
+        backgroundColor: Colors.indigo
+    ),
   ];
 
   PageController _pageController;
@@ -67,9 +72,25 @@ class _MainViewsState extends State<MainViews> {
 
   @override
   Widget build(BuildContext context) {
+    // List of FloatingActionButtons to show only on 'Suggestions' page
+    List<Widget> _fabs = [
+      Container(),
+      Container(),
+      Container(),
+      FloatingActionButton.extended(
+        onPressed: () {
+
+        },
+        icon: Icon(Icons.add),
+        label: Text("Suggest Challenge"),
+      ),
+      Container(),
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        centerTitle: true,
       ),
       body: PageView(
         onPageChanged: _onPageChanged,
@@ -80,8 +101,11 @@ class _MainViewsState extends State<MainViews> {
           Container(),
           Container(),
           Container(),
+          Container(),
         ],
       ),
+      floatingActionButton: _fabs[_page],
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       bottomNavigationBar: BottomNavigationBar(
         items: _bottomNavigationBarItems,
         currentIndex: _page,
