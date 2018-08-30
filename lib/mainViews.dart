@@ -57,7 +57,7 @@ class _MainViewsState extends State<MainViews> {
   @override
   void initState() {
     super.initState();
-    _pageController = PageController();
+    _pageController = PageController(initialPage: _page);
   }
 
   @override
