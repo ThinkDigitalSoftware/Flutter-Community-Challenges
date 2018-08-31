@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="799b8ead-1faa-48fe-8810-89da3e422c15" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/submitEntry.dart" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/suggestChallenge.dart" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" afterPath="$PROJECT_DIR$/lib/main.dart" />
       <change beforePath="$PROJECT_DIR$/lib/mainViews.dart" afterPath="$PROJECT_DIR$/lib/mainViews.dart" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
@@ -49,8 +44,8 @@
       <file leaf-file-name="mainViews.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/mainViews.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="101" column="58" lean-forward="false" selection-start-line="101" selection-start-column="58" selection-end-line="101" selection-end-column="58" />
+            <state relative-caret-position="610">
+              <caret line="136" column="56" lean-forward="false" selection-start-line="136" selection-start-column="56" selection-end-line="136" selection-end-column="56" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -856,8 +851,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/mainViews.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="101" column="58" lean-forward="false" selection-start-line="101" selection-start-column="58" selection-end-line="101" selection-end-column="58" />
+        <state relative-caret-position="610">
+          <caret line="136" column="56" lean-forward="false" selection-start-line="136" selection-start-column="56" selection-end-line="136" selection-end-column="56" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
