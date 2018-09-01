@@ -18,6 +18,7 @@ class _MainViewsState extends State<MainViews> {
         title: Text(widget.title),
       ),
       body: Container(
+        child: Text(""),
 
       ),
     );
